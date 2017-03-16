@@ -9,7 +9,7 @@
 #   File name:      WebScraping.py
 #   Author:         Johnni Østergaard
 #   Copyright:      (c) 2017 Johnni Østergaard
-#   Credits         Python Programming | https://pythonprogramming.net/
+#   Credits         PythonProgramming | https://pythonprogramming.net/
 #   License:        MIT License
 #   Interpreter:    Python 3.5.2
 #Progress ======================================================================
