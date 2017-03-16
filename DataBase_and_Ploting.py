@@ -1,23 +1,44 @@
-#Python modules ================================================================
-import sqlite3                      #SQLite database module
-import time                         #Time module
-import datetime                     #Datetime module
-import random                       #Random number generator module
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#Description ===================================================================
+#   This code was written following a tutorial* from PythonProgramming.net**
+#   then modified for used as example and reminder of how to access the SQLite
+#   database and how to plot data from the SQLite database.
+#   *Title:         Web scraping and parsing with Beautiful Soup
+#   **URL:          https://pythonprogramming.net/introduction-scraping-parsing-beautiful-soup-tutorial/
+#Information ===================================================================
+#   File name:      DataBase_and_Ploting.py
+#   Author:         Johnni Østergaard
+#   Copyright:      (c) 2017 Johnni Østergaard
+#   Credits         PythonProgramming | https://pythonprogramming.net/
+#   License:        MIT License
+#   Interpreter:    Python 3.5.2
+#Progress ======================================================================
+#   Status:         Development
+#   Version:        1.0.0        | Major.minor.patch
+#   Created:        14-03-2017
+#   Modified:       16-03-2017   | Add file information & improved readability
+#===============================================================================
 
-#Third party modules ===========================================================
-#MatPlotLib -----------------------------------------------------------------
-    #Source:http://matplotlib.org/
+#Standard modules
+import sqlite3                          #SQLite database module
+import time                             #Time module
+import datetime                         #Datetime module
+import random                           #Random number generator module
+#Third party modules
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from matplotlib import style
 style.use('fivethirtyeight')
+#Info about modules
+    #MatPlotLib website:    http://matplotlib.org/
 
-#SQLite db function ============================================================
+#SQLite db definitions =========================================================
 conn = sqlite3.connect('Test.db')   #Connect to a database and/or created it
 c = conn.cursor()                   #Defining a db cursor
 
 #Create a table with columns ------------------------------------------------
-def Tb_create():                 #Create a table in Test.db
+def Tb_create():                    #Create a table in Test.db
     c.execute('CREATE TABLE IF NOT EXISTS stuffToPlot(\
     unix REAL, datestamp TEXT, keyword TEXT, value REAL)')
         #Table name:    stuffToPlot
@@ -28,16 +49,16 @@ def Tb_create():                 #Create a table in Test.db
         #Remeber that the data type and number of chr in the table determinants it size
 
 #Write values and strings to the table in db --------------------------------
-def Tb_entry():                     #Write data to table in SQLite db
+def Tb_entry():                      #Write data to table in SQLite db
     c.execute("INSERT INTO stuffToPlot VALUES(124, '12-03-2017', 'Python', 51)")
         #Insert data to all colums in a new row
-    conn.commit()   #Save the inserted data to the table
+    conn.commit()    #Save the inserted data to the table
     #c.close()       #Close the cursor in the SQLite db
     #conn.close()    #Close the connection to the SQLite db
 
 #Write variables to the table in db -----------------------------------------
-def dynamic_data_entry():           #Write variables to the table of db
-    unix = time.time()              #Get current time stamp
+def dynamic_data_entry():            #Write variables to the table of db
+    unix = time.time()               #Get current time stamp
     data = str(datetime.datetime.fromtimestamp(unix).strftime('%Y-%m-%d %H:%M:%S'))
     keyword = 'Python'
     value = random.randrange(0,10)   #Create a random number between 0 and 10
@@ -66,11 +87,10 @@ def Tb_read():
 
 #Update data in the table ---------------------------------------------------
 def Tb_update(old, new):
-    #Update table --------------------------------------------------------
     #c.execute("UPDATE stuffToPlot SET value=1 WHERE value=7")              #No variable input
     c.execute("UPDATE stuffToPlot SET value=? WHERE value=?", (old, new))   #Variable input
     conn.commit()
-    print 'Updated table: \n', read_from_db()
+    print('Updated table: \n', read_from_db())
 
 #Delete data in the table ---------------------------------------------------
 def Tb_delete(number, limit):
@@ -82,14 +102,14 @@ def Tb_delete(number, limit):
         c.execute("DELETE FROM stuffToPlot WHERE value =?", (number,))  #Variable input
         conn.commit()
     #Print response ------------------------------------------------------
-        print 'Deleting successfully'
+        print('Deleting successfully')
         c.execute("SELECT * FROM stuffToPlot")
         for row in c.fetchall():
             print(row)
     else:
-        print 'To many row are selected'
+        print('To many row are selected')
 
-#MatPlotLib function ===========================================================
+#MatPlotLib definitions ========================================================
 def graph_data():            #Plot a graph from data in table
     c.execute("SELECT unix, value FROM stuffToPlot")
     dates = []
