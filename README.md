@@ -18,9 +18,9 @@ Contents
 <dl>
   <dt>DataBase_and_Ploting.py:</dt>
     <dd>Code example of how to access a SQLite database and how to plot data from that SQLite database.</dd>
-</dl>
-  **WebScraping.py:**
-    Code example of how to get the text, URLs and tags from a web page using a Web Scraper.
 
+  <dt>WebScraping.py:</dt>
+    <dd>Code example of how to get the text, URLs and tags from a web page using a Web Scraper.<dd>
+</dl>
 ## License
   MIT License - see the LICENSE.md file for more details.
