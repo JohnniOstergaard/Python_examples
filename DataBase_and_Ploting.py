@@ -4,8 +4,8 @@
 #   This code was written following a tutorial* from PythonProgramming.net**
 #   then modified for used as example and reminder of how to access the SQLite
 #   database and how to plot data from the SQLite database.
-#   *Title:         Web scraping and parsing with Beautiful Soup
-#   **URL:          https://pythonprogramming.net/introduction-scraping-parsing-beautiful-soup-tutorial/
+#   *Title:         Inserting into a Database with SQLite
+#   **URL:          https://pythonprogramming.net/sql-database-python-part-1-inserting-database/
 #Information ===================================================================
 #   File name:      DataBase_and_Ploting.py
 #   Author:         Johnni Østergaard
