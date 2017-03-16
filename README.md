@@ -22,5 +22,6 @@ Contents
   <dt>WebScraping.py:</dt>
     <dd>Code example of how to get the text, URLs and tags from a web page using a Web Scraper.<dd>
 </dl>
+
 ## License
   MIT License - see the LICENSE.md file for more details.
