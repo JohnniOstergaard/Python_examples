@@ -8,6 +8,9 @@
 ## Contents
 > **DataBase_and_Ploting.py:**
 > Code example of how to access a SQLite database and how to plot data from that SQLite database.
+>
+> **WebScraping.py:**
+> Code example of how to get the text, URLs and tags from a web page using a Web Scraper.
 
 <dl>
   <dt> DataBase_and_Ploting.py:</dt>
