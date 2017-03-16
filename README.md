@@ -6,8 +6,7 @@
   Projects with dependent files will be its own separate subfolder.
   
 ## Contents
-> DataBase_and_Ploting.py:
-
+> **DataBase_and_Ploting.py:**
 > Code example of how to access a SQLite database and how to plot data from that SQLite database.
 
 <dl>
