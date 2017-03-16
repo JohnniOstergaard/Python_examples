@@ -7,6 +7,8 @@
   
 ## Contents
 > DataBase_and_Ploting.py:
+  Code example of how to access a SQLite database and how to plot data from that SQLite database.
+
 <dl>
   <dt> DataBase_and_Ploting.py:</dt>
     <dd>  Code example of how to access a SQLite database and how to plot data from that SQLite database.</dd>
